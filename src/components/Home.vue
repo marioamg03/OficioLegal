@@ -3,13 +3,10 @@
     <section>
       <v-carousel>
         <!-- template para la construccion de la seccion de slider -->
-        <template v-for="sliders in sliders">
-          <slider v-bind:sliders="sliders"></slider>
-        </template>
+        <slider v-for="slider in sliders" v-bind:slider="slider"></slider>
         <!-- fin del template para la construccion de la seccion de slider -->
       </v-carousel>
     </section>
-
 
     <section>
       <v-layout column wrap class="my-5" align-center>
@@ -215,32 +212,8 @@
 
 import * as VueGoogleMaps from 'vue2-google-maps'
 import Vue from 'vue'
-// import Slider from './Slider.vue'
+import slider from './Slider.vue'
 
-// componente para la seccion del slider
-Vue.component('slider', {
-  props: ['sliders'],
-  // methods:{
-  //   onchange: function (ev) {
-  //     this.$emit('checked', this.peliculas.value, ev.target.checked)
-  //   }
-  // },
-  template: `
-  <v-carousel-item v-bind:sliders="sliders" v-bind:src= sliders.src transition="fade" reverse-transition="fade" dark height="500px">
-    <v-container fill-height>
-      <v-layout align-center>
-        <v-flex xs4 offset-xs1>
-          <h3 class="display-1 white--text">{{sliders.title}}</h3>
-          <span class="subheading white--text">{{sliders.text}}</span>
-          <v-divider class="my-3"></v-divider>
-          <v-btn large color="primary" class="mx-0">{{sliders.buttontext}}</v-btn>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-carousel-item>
-  `
-})
-// fin del componente para la seccion del slider
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyBCOiTGfsj8pf6jnJAUI441oTKtQb8hQaQ',
@@ -276,13 +249,6 @@ export default {
         buttontext: 'Ver mas'}
     ],
     drawer: null,
-    items: [
-      { src: '/static/img/carouselHome/1_1900x1200.jpg' },
-      { src: '/static/img/carouselHome/2_1900x1200.jpg' },
-      { src: '/static/img/carouselHome/3_1900x1200.jpg' },
-      { src: '/static/img/carouselHome/4_1900x1200.jpg' },
-      { src: '/static/img/carouselHome/5_1900x1200.jpg' }
-    ],
     center: {lat: 6.332021, lng: -66.698975},
     markers: [{
       position: {lat: 10.0, lng: 10.0}
@@ -294,7 +260,7 @@ export default {
     source: String
   },
   components: {
-  //  Slider
+    slider
   },
   methods: {
     sendMail () {
