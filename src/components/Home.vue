@@ -1,129 +1,32 @@
 <template>
   <v-content>
-      <section>
-        <v-carousel >
-    <v-carousel-item v-bind:src=items[0].src
-              transition="fade"
-              reverse-transition="fade"
-              dark
-              height="500px"
-              >
-    <v-container fill-height>
-      <v-layout align-center>
-        <v-flex xs4 offset-xs1>
-          <h3 class="display-1 white--text">Documentos Online</h3>
-          <span class="subheading white--text">Genera automaticamente tus documentos, contratos, poderes y mas a travez de nuestra plataforma de firmas digitalizadas</span>
-          <v-divider class="my-3"></v-divider>
-          <div class="title mb-3 white--text">Ver mas</div>
-          <v-btn large color="primary" class="mx-0">Ver mas</v-btn>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-carousel-item>
-  <v-carousel-item v-bind:src=items[1].src
-              transition="fade"
-              reverse-transition="fade"
-              dark
-              height="500px"
-              >
-    <v-container fill-height>
-      <v-layout align-center>
-        <v-flex xs4 offset-xs6>
-          <h3 class="display-1 white--text">Asesorias Online</h3>
-          <span class="subheading white--text" >Resuelve tus dudas legales en cualquier area juridica en el estado y ciudad donde te encuentres seleccionando al abogado(a), de tu preferencia a traves de una videollamada</span>
-          <v-divider class="my-3"></v-divider>
-          <div class="title mb-3 white--text">Ver mas</div>
-          <v-btn large color="primary" class="mx-0">Ver mas</v-btn>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-carousel-item>
-      <v-carousel-item v-bind:src=items[2].src
-              transition="fade"
-              reverse-transition="fade"
-              dark
-              height="500px"
-              >
-    <v-container fill-height>
-      <v-layout align-center>
-        <v-flex xs4 offset-xs1>
-          <h3 class="display-1 white--text">Aprobación y certificado</h3>
-          <span class="subheading white--text">Avalado por las instituciones públicas y el colegio de abogados de venezuela con la facilidad de ofrecer un servicio online juridico y expedito</span>
-          <v-divider class="my-3"></v-divider>
-          <div class="title mb-3 white--text">Ver mas</div>
-          <v-btn large color="primary" class="mx-0">Ver mas</v-btn>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-carousel-item>
-  <v-carousel-item v-bind:src=items[3].src
-              transition="fade"
-              reverse-transition="fade"
-              dark
-              height="500px"
-              >
-    <v-container fill-height>
-      <v-layout align-center>
-        <v-flex xs4 offset-xs6>
-          <h3 class="display-1 white--text">Registrate como usuario</h3>
-          <span class="subheading white--text" >paja paja paja , asi como también recibir informaciones de las actualizaciones y llevar un registro de tus actividades</span>
-          <v-divider class="my-3"></v-divider>
-          <div class="title mb-3 white--text">Ver mas</div>
-          <v-btn large color="primary" class="mx-0">Ver mas</v-btn>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-carousel-item>
-  <v-carousel-item v-bind:src=items[4].src
-              transition="fade"
-              reverse-transition="fade"
-              dark
-              height="500px"
-              >
-    <v-container fill-height>
-      <v-layout align-center>
-        <v-flex xs4 offset-xs1>
-          <h3 class="display-1 white--text">Eres abogado(a)?</h3>
-          <span class="subheading white--text">No importa que seas independiente o trabajes para una firma esta es tu oportunidad de brindar asesorias desde tu hogar u oficina y generear honorarios extras</span>
-          <v-divider class="my-3"></v-divider>
-          <div class="title mb-3 white--text">Ver mas</div>
-          <v-btn large color="primary" class="mx-0">Ver mas</v-btn>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-carousel-item>
-</v-carousel>
+    <section>
+      <v-carousel>
+        <!-- template para la construccion de la seccion de slider -->
+        <template v-for="sliders in sliders">
+          <slider v-bind:sliders="sliders"></slider>
+        </template>
+        <!-- fin del template para la construccion de la seccion de slider -->
+      </v-carousel>
     </section>
-      <section>
-        <v-layout
-          column
-          wrap
-          class="my-5"
-          align-center
-        >
 
-            <div class="text-xs-center titulo">
-              <h2>¿Que Ofrecemos?</h2>
-            </div>
 
-        </v-layout>
-      </section>
-      <section>
-        <v-container grid-list-md text-xs-center>
-    <v-layout row wrap>
-      <v-flex xs4 >
-      <v-card
-        color="white"
-        flat
-        height="300px"
-        >
+    <section>
+      <v-layout column wrap class="my-5" align-center>
+        <div class="text-xs-center titulo">
+          <h2>¿Que Ofrecemos?</h2>
+        </div>
+      </v-layout>
+    </section>
+    <section>
+      <v-container grid-list-md text-xs-center>
+        <v-layout row wrap>
+          <v-flex xs4 >
+            <v-card color="white" flat height="300px">
               <v-container fluid grid-list-lg>
                 <v-layout row>
                   <v-flex xs5>
-                    <v-card-media
-                      src="/static/img/home1Documentos.jpg"
-                      height="250px"
-                    ></v-card-media>
+                    <v-card-media src="/static/img/home1Documentos.jpg" height="250px"/>
                   </v-flex>
                   <v-flex xs7>
                       <div class="headline text-lg-left">Documentos Online</div>
@@ -141,8 +44,7 @@
       <v-card
         color="white"
         flat="true"
-        height="300px"
-        >
+        height="300px">
               <v-container fluid grid-list-lg>
                 <v-layout row>
                   <v-flex xs5>
@@ -310,8 +212,35 @@
   </v-content>
 </template>
 <script>
+
 import * as VueGoogleMaps from 'vue2-google-maps'
 import Vue from 'vue'
+// import Slider from './Slider.vue'
+
+// componente para la seccion del slider
+Vue.component('slider', {
+  props: ['sliders'],
+  // methods:{
+  //   onchange: function (ev) {
+  //     this.$emit('checked', this.peliculas.value, ev.target.checked)
+  //   }
+  // },
+  template: `
+  <v-carousel-item v-bind:sliders="sliders" v-bind:src= sliders.src transition="fade" reverse-transition="fade" dark height="500px">
+    <v-container fill-height>
+      <v-layout align-center>
+        <v-flex xs4 offset-xs1>
+          <h3 class="display-1 white--text">{{sliders.title}}</h3>
+          <span class="subheading white--text">{{sliders.text}}</span>
+          <v-divider class="my-3"></v-divider>
+          <v-btn large color="primary" class="mx-0">{{sliders.buttontext}}</v-btn>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-carousel-item>
+  `
+})
+// fin del componente para la seccion del slider
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyBCOiTGfsj8pf6jnJAUI441oTKtQb8hQaQ',
@@ -320,6 +249,32 @@ Vue.use(VueGoogleMaps, {
 })
 export default {
   data: () => ({
+    sliders: [
+      { src: '/static/img/carouselHome/1_1900x1200.jpg',
+        title: 'Documentos Online',
+        text: 'Genera automaticamente tus documentos, contratos, poderes y mas a travez de nuestra plataforma de firmas digitalizadas',
+        buttontext: 'Ver mas' },
+
+      { src: '/static/img/carouselHome/2_1900x1200.jpg',
+        title: 'Asesorias Online',
+        text: 'Resuelve tus dudas legales en cualquier area juridica en el estado y ciudad donde te encuentres seleccionando al abogado(a), de tu preferencia a traves de una videollamada',
+        buttontext: 'Ver mas' },
+
+      { src: '/static/img/carouselHome/3_1900x1200.jpg',
+        title: 'Aprobación y certificado',
+        text: 'Avalado por las instituciones públicas y el colegio de abogados de venezuela con la facilidad de ofrecer un servicio online juridico y expedito',
+        buttontext: 'Ver mas'},
+
+      { src: '/static/img/carouselHome/4_1900x1200.jpg',
+        title: 'Registrate como usuario',
+        text: 'Registrate para recibir informaciones de las actualizaciones y llevar un seguimiento de tus actividades',
+        buttontext: 'Ver mas'},
+
+      { src: '/static/img/carouselHome/5_1900x1200.jpg',
+        title: 'Eres abogado(a)?',
+        text: 'No importa que seas independiente o trabajes para una firma esta es tu oportunidad de brindar asesorias desde tu hogar u oficina y generear honorarios extras',
+        buttontext: 'Ver mas'}
+    ],
     drawer: null,
     items: [
       { src: '/static/img/carouselHome/1_1900x1200.jpg' },
@@ -338,6 +293,9 @@ export default {
   props: {
     source: String
   },
+  components: {
+  //  Slider
+  },
   methods: {
     sendMail () {
       //  TODO
@@ -348,7 +306,7 @@ export default {
 
 <style>
   #keep main .container {
-    height: 660px;
+    height: 870px;
   }
 
   .navigation-drawer__border {
