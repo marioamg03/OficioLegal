@@ -3,7 +3,7 @@
     <section>
       <v-carousel>
         <!-- template para la construccion de la seccion de slider -->
-        <slider v-for="slider in sliders" v-bind:slider="slider"></slider>
+        <sliders v-for="sliders in sliders" v-bind:sliders="sliders"></sliders>
         <!-- fin del template para la construccion de la seccion de slider -->
       </v-carousel>
     </section>
@@ -212,7 +212,7 @@
 
 import * as VueGoogleMaps from 'vue2-google-maps'
 import Vue from 'vue'
-import slider from './Slider.vue'
+import sliders from './Slider.vue'
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -260,7 +260,7 @@ export default {
     source: String
   },
   components: {
-    slider
+    sliders
   },
   methods: {
     sendMail () {

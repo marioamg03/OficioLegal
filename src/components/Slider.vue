@@ -16,8 +16,8 @@
 <script>
 // componente para la seccion del slider
 export default {
-  name: 'slider',
-  props: ['slider']
+  name: 'sliders',
+  props: ['sliders']
 }
 // fin del componente para la seccion del slider
 </script>
