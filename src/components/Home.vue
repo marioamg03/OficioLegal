@@ -1,7 +1,7 @@
 <template>
   <v-content>
     <section>
-      <v-carousel>
+      <v-carousel style="height: 770px">
         <!-- template para la construccion de la seccion de slider -->
         <sliders v-for="sliders in sliders" v-bind:sliders="sliders"></sliders>
         <!-- fin del template para la construccion de la seccion de slider -->
@@ -14,88 +14,15 @@
           <h2>¿Que Ofrecemos?</h2>
         </div>
       </v-layout>
-    </section>
-    <section>
-      <v-container grid-list-md text-xs-center>
+
+      <v-container grid-list-md fluid>
         <v-layout row wrap>
-          <v-flex xs4 >
-            <v-card color="white" flat height="300px">
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs5>
-                    <v-card-media src="/static/img/home1Documentos.jpg" height="250px"/>
-                  </v-flex>
-                  <v-flex xs7>
-                      <div class="headline text-lg-left">Documentos Online</div>
-                      <p class="text-lg-left">Realiza automaticamente tus documentos legales visados y listos desde la comodidad de tu hogar u oficina; Experimenta la innovacion tecnologica de ser un abogado</p>
-        <v-card-actions>
-          <v-btn flat color="green right">¿Como funciona?</v-btn>
-        </v-card-actions>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-
-      </v-card>
-      </v-flex>
-      <v-flex xs4 >
-      <v-card
-        color="white"
-        flat="true"
-        height="300px">
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs5>
-                    <v-card-media
-                      src="/static/img/home2Aseso.jpg"
-                      height="250px"
-                    ></v-card-media>
-                  </v-flex>
-                  <v-flex xs7>
-
-                      <div class="headline text-lg-left">Asesorias <br> Online</div>
-                      <p class="text-lg-left">Asesorias en vivo a traves de una videollamada con nuestros abogados especializados en el area legal segun tu necesidad y en el horario de su comodida</p>
-        <br>
-        <v-card-actions>
-          <v-btn flat color="green right">¿Ven y asesorate?</v-btn>
-        </v-card-actions>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-      </v-card>
-      </v-flex>
-      <v-flex xs4 >
-      <v-card
-        color="white"
-        flat="true"
-        height="300px"
-        >
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs5>
-                    <v-card-media
-                      src="/static/img/home3Registro.jpg"
-                      height="250px"
-
-                    ></v-card-media>
-                  </v-flex>
-                  <v-flex xs7>
-
-                      <div class="headline text-lg-left">Registrate <br></div>
-                      <br>
-                      <p class="text-lg-left">Podras registrarte como Usuario(a) o Abogado(a) para disfrutar de las ventajas que ofrecemos en nuestra plataforma y puedas hacer uso de las actualizaciones</p>
-
-
-          <v-card-actions>
-            <v-btn flat color="green right">Registrate aqui</v-btn>
-          </v-card-actions>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-         </v-card>
-        </v-flex>
+          <offers v-for="offers in offers" v-bind:offers="offers"></offers>
       </v-layout>
     </v-container>
    </section>
+
+
    <section>
   <v-jumbotron src="/static/img/fondo1.png" height="600px">
     <v-container fill-height>
@@ -117,6 +44,11 @@
     </v-card>
 </v-flex>
    </section>
+
+
+
+
+
       <section>
        <gmap-map
     :center="center"
@@ -213,6 +145,7 @@
 import * as VueGoogleMaps from 'vue2-google-maps'
 import Vue from 'vue'
 import sliders from './Slider.vue'
+import offers from './Whatweoffer.vue'
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -248,6 +181,22 @@ export default {
         text: 'No importa que seas independiente o trabajes para una firma esta es tu oportunidad de brindar asesorias desde tu hogar u oficina y generear honorarios extras',
         buttontext: 'Ver mas'}
     ],
+    offers: [
+      { src: '/static/img/home1Documentos.jpg',
+        title: 'Documentos Online',
+        text: 'Realiza automaticamente tus documentos legales visados y listos desde la comodidad de tu hogar u oficina; Experimenta la innovacion tecnologica de ser un abogado.',
+        buttontext: '¿Como funciona?'},
+
+      { src: '/static/img/home2Aseso.jpg',
+        title: 'Asesorias Online',
+        text: 'Asesorias en vivo a traves de una videollamada con nuestros abogados especializados en el area legal segun tu necesidad y en el horario de su comodidad.',
+        buttontext: 'Ven y asesorate'},
+
+      { src: '/static/img/home3Registro.jpg',
+        title: 'Registrate',
+        text: 'Podras registrarte como Usuario(a) o Abogado(a) para disfrutar de las ventajas que ofrecemos en nuestra plataforma y puedas hacer uso de las actualizaciones.',
+        buttontext: 'Registrate aqui'}
+    ],
     drawer: null,
     center: {lat: 6.332021, lng: -66.698975},
     markers: [{
@@ -260,7 +209,8 @@ export default {
     source: String
   },
   components: {
-    sliders
+    sliders,
+    offers
   },
   methods: {
     sendMail () {
