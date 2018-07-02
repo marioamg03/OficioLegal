@@ -22,9 +22,7 @@
         <!-- template para la construccion de la seccion de que ofrecemos -->
           <offers v-for="offers in offers" v-bind:offers="offers"></offers>
         <!-- template para la construccion de la seccion de que ofrecemos -->
-      <v-container grid-list-md fluid>
         </v-layout>
-      </v-container>
     </section>
 <!-- Seccion Que Ofrecemos FINAL-->
 
@@ -53,96 +51,49 @@
        </v-flex>
      </section>
 <!-- Seccion Que Ofrecemos Documentos Asesorias FINAL-->
+
 <!-- Seccion Mapas INICIO-->
+     <section>
+       <Saren></Saren>
+     </section>
 <!-- Seccion Mapas FINAL-->
-   <section>
-      <section>
-        <Saren></Saren>
-       
-   </section>
-       <div
-    
-    class="grey darken-3"
-  >
-    <div>
-      <v-container
-        fluid
-        style="min-height: 0;"
-        grid-list-lg
-      >
-        <v-layout row wrap>
-          <v-flex xs12>
-            <div color="grey darken-3" class="white--text">
-              <v-container fluid grid-list-lg>
-                <v-layout row>
-                  <v-flex xs7n style="margin-top:15%">
-                    
-                      <h1 class="display-3" style="text-align : center;">Contactanos</h1>
-                      <div style="text-align : center;">Servicios legales online a la altura de tus necesidades</div>
-                  
-                  </v-flex>
-                  <v-flex xs5>
-<v-form v-model="valid" ref="form" lazy-validation>
-    <v-text-field
-      label="Nombre"
-      dark
-      v-model="name"
-      :rules="nameRules"
-      required
-    ></v-text-field>
-    <v-text-field
-      label="E-mail"
-      dark
-      v-model="email"
-      :rules="emailRules"
-      required
-    ></v-text-field>
-    <v-text-field
-      label="Telefono"
-      dark
-      v-model="email"
-      :rules="nameRules"
-      required
-    ></v-text-field>
-    <v-text-field
-      label="Mensaje"
-      dark
-      v-model="email"
-      :counter="250"
-      required
-      textarea
-    ></v-text-field>
+     <section>
+       <div class="grey darken-3">
+         <div>
+           <v-container fluid style="min-height: 0;" grid-list-lg>
+             <v-layout row wrap>
+               <v-flex xs12>
+                 <div color="grey darken-3" class="white--text">
+                   <v-container fluid grid-list-lg>
+                     <v-layout row>
+                       <v-flex xs7n style="margin-top:15%">
+                         <h1 class="display-3" style="text-align : center;">Contactanos</h1>
+                         <div style="text-align : center;">Servicios legales online a la altura de tus necesidades</div>
+                       </v-flex>
+                       <v-flex xs5>
+                         <v-form v-model="valid" ref="form" lazy-validation>
+                           <v-text-field label="Nombre" dark v-model="name" :rules="nameRules" required></v-text-field>
+                           <v-text-field label="E-mail" dark v-model="email" :rules="emailRules" required></v-text-field>
+                           <v-text-field label="Telefono" dark v-model="email" :rules="nameRules" required></v-text-field>
+                           <v-text-field label="Mensaje" dark v-model="email" :counter="250" required textarea></v-text-field>
+                           <v-btn @click="sendMail()" :disabled="!valid" dark> ENVIAR </v-btn>
+                         </v-form>
+                       </v-flex>
+                     </v-layout>
+                   </v-container>
+                 </div>
+               </v-flex>
+             </v-layout>
+           </v-container>
+         </div>
+       </div>
+     </section>
 
-    <v-btn
-      @click="sendMail()"
-      :disabled="!valid"
-      dark
-    >
-      ENVIAR
-    </v-btn>
-    
-  </v-form>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-  </div>
-   </section>
-
-
-  </v-content>
-</template>
-
-
+   </v-content>
+ </template>
 
 <script>
-
 import Saren from './Saren'
-
 import sliders from './Slider.vue'
 import offers from './Whatweoffer.vue'
 export default {
@@ -204,15 +155,13 @@ export default {
   },
   components: {
     sliders,
-    offers
+    offers,
+    Saren
   },
   methods: {
     sendMail () {
       //  TODO
     }
-  },
-  components: {
-    Saren
   }
 }
 </script>
@@ -232,4 +181,3 @@ export default {
 
 
 </style>
-
