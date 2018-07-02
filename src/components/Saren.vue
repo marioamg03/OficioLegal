@@ -1,41 +1,44 @@
 <template>
 
-    <div>
-        <h1> ---- Oficinas Saren ---</h1>
-        <div id ='container-img'>
+    <div id = "Saren-Component">
+        <h2 class="subtitle is-2"> ---- Oficinas SAREN ---</h2>
+        <div class = "columns">
+          <div class="column is-two-fifths">
+          <div id ='container-img'>
             <img src= '../../static/img/Boton 1.png'>
             <img src= '../../static/img/Boton 2.png'>
             <img src= '../../static/img/Boton 3.png'>
             <img src= '../../static/img/Boton 4.png'>
         </div>
-        <div class ="form-group">
-            <label for = 'oficina'> Tipos de oficinas</label>
-            <select id = 'oficina' v-model="seleccionTipoOficina" class="custom-select custom-select-sm">
-                <option v-for="tipoOficina in tiposOficinas" v-bind:key ="tipoOficina.id"> {{tipoOficina.name}}</option>
-            </select>
-        </div>
-        <div class ="form-group">
-            <label for = 'estado'> Estado</label>
-            <select id = 'estado' v-model="seleccionEstado" class="custom-select custom-select-sm">
-                <option v-for = "estado in estados" v-bind:key="estado.id"> {{estado.name}}</option>
-            </select>
-        </div>
-        <div class ="form-group">
-            <label for = 'nombreOficina'> Oficina</label>
-            <select id = 'nombreOficina' v-model="seleccionOficina" class="custom-select custom-select-sm">
-                <option v-for = "oficina in oficinas" v-bind:key ="oficina.id">{{oficina}}</option>
-            </select>
-        </div>
-        
-        <div id = 'map-container'>
-            <gmap-map :center ="center" :zoom = "zoom" style = "width:100%; height: 400px">
-              <gmap-marker :position = "center">
-                </gmap-marker> 
-               <!-- <gmap-marker :key ="index" v-for= "(m,index) in markers" :position = "m.position">
-                </gmap-marker> -->
+          <div class =" select-container">
+              <label for = 'oficina'> Tipos de oficinas</label>
+              <select id = 'oficina' v-model="seleccionTipoOficina" class="select-input">
+                  <option v-for="tipoOficina in tiposOficinas" v-bind:key ="tipoOficina.id"> {{tipoOficina.name}}</option>
+              </select>
+          </div>
+          <div class ="select-container">
+              <label for = 'estado'> Estado</label>
+              <select id = 'estado' v-model="seleccionEstado" class="select-input">
+                  <option v-for = "estado in estados" v-bind:key="estado.id"> {{estado.name}}</option>
+              </select>
+          </div>
+          <div class =" select-container">
+              <label for = 'nombreOficina'> Oficina</label>
+              <select id = 'nombreOficina' v-model="seleccionOficina" class="select-input">
+                  <option v-for = "oficina in oficinas" v-bind:key ="oficina.id">{{oficina}}</option>
+              </select>
+          </div>
+          </div>
+          <div id = 'map-container' class="column">
+              <gmap-map :center ="center" :zoom = "zoom" style = "width:100%; height: 100%">
+                <gmap-marker :position = "center">
+                  </gmap-marker> 
+                <!-- <gmap-marker :key ="index" v-for= "(m,index) in markers" :position = "m.position">
+                  </gmap-marker> -->
 
-            </gmap-map>
-        </div>
+              </gmap-map>
+          </div>
+        </div>  
     </div>
 
 </template>
@@ -128,14 +131,47 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-#map-container
-    width 500px
-    height 400px
+<style>
+@import '../../node_modules/bulma/css/bulma.css';
 
-img 
-    width 100px
+#map-container {
+    width: 500px;
+    height: 400px;
+}
+img {
+    width: 90px
+  }
+
+#Saren-Component {
+  margin: 40px 80px 40px 80px; /*  top right bottom left */
+}  
+
+#Saren-Component h2 {
+  text-align: center;
+}
+
+.select-container {
+  background: rgb(175, 174, 174);
+  color: white;
+  height: 35px;
+  width: 370px;
+  margin: 10px 0px; /*  top and botton right and left */
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-top: 5px;
+
+}
+
+.select-input {
+  background: white;
+  width: 175px;
+  margin-left: 30px;  
+  border-radius: 5px;
+  position: absolute;
+  float: right;
+  color: black;
+} 
+
 
 </style>
-
 
