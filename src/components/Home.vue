@@ -1,5 +1,7 @@
 <template>
   <v-content>
+
+<!-- Seccion Slider INICO-->
     <section>
       <v-carousel style="height: 770px">
         <!-- template para la construccion de la seccion de slider -->
@@ -7,64 +9,61 @@
         <!-- fin del template para la construccion de la seccion de slider -->
       </v-carousel>
     </section>
+<!-- Secion Slider FINAL-->
 
+<!-- Seccion Que Ofrecemos INICO-->
     <section>
       <v-layout column wrap class="my-5" align-center>
         <div class="text-xs-center titulo">
           <h2>¿Que Ofrecemos?</h2>
         </div>
       </v-layout>
-
       <v-container grid-list-md fluid>
         <v-layout row wrap>
+        <!-- template para la construccion de la seccion de que ofrecemos -->
           <offers v-for="offers in offers" v-bind:offers="offers"></offers>
-      </v-layout>
-    </v-container>
-   </section>
+        <!-- template para la construccion de la seccion de que ofrecemos -->
+        </v-layout>
+      </v-container>
+    </section>
+<!-- Seccion Que Ofrecemos FINAL-->
+
+<!-- Seccion Solucion Juridica INICIO-->
+     <section>
+      <v-jumbotron src="/static/img/fondo1.png" height="600px">
+        <v-container fill-height>
+          <v-layout align-center>
+            <v-flex>
+              <h3 class="display-3">Solucion Juridica Innovadora</h3>
+              <p> Oficio legal es un escritorio juridico virtual, creado con la necesidad de favorecer a las personas en el aspecto juridico y economico,<br> en los asuntos legales de su dia a dia desde la comodidad de su hogar u oficina.</p>
+              <p> A diferencia de escritorios juridios convencionales, la incentidumbre de confiar en un abogado y altos costos por servicios <br> profesionales, Oficio Legal te brinda la oportunidad de realizar por ti mismo los documentos legales y/o asesorarte con <br>abogados especialistas, exclusivamente seleccionados para solcionar tus dudas a costos asequibles para todos, a traves <br> de videollamas de nuestra plataforma</p>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-jumbotron>
+     </section>
+<!-- Seccion Solucion Juridica FINAL-->
+
+<!-- Seccion Que Ofrecemos Documentos Asesorias INICIO-->
+     <section>
+       <v-flex xs12>
+         <v-card>
+           <v-card-media src="/static/img/home3.jpg" height="500px"></v-card-media>
+         </v-card>
+       </v-flex>
+     </section>
+<!-- Seccion Que Ofrecemos Documentos Asesorias FINAL-->
+
+<!-- Seccion Mapas INICIO-->
+     <section>
+       <gmap-map :center="center" :zoom="5" style="width: auto; height: 300px">
+         <gmap-marker :key="index" v-for="(m, index) in markers" :position="m.position" :clickable="true" :draggable="true" @click="center=m.position"></gmap-marker>
+       </gmap-map>
+     </section>
+<!-- Seccion Mapas FINAL-->
 
 
-   <section>
-  <v-jumbotron src="/static/img/fondo1.png" height="600px">
-    <v-container fill-height>
-      <v-layout align-center>
-        <v-flex>
-          <h3 class="display-3">Solucion Juridica Innovadora</h3>
-          <p> Oficio legal es un escritorio juridico virtual, creado con la necesidad de favorecer a las personas en el aspecto juridico y economico,<br> en los asuntos legales de su dia a dia desde la comodidad de su hogar u oficina.</p>
-          <p> A diferencia de escritorios juridios convencionales, la incentidumbre de confiar en un abogado y altos costos por servicios <br> profesionales, Oficio Legal te brinda la oportunidad de realizar por ti mismo los documentos legales y/o asesorarte con <br>abogados especialistas, exclusivamente seleccionados para solcionar tus dudas a costos asequibles para todos, a traves <br> de videollamas de nuestra plataforma</p>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-jumbotron>
-   </section>
-   <section>
-     <v-flex xs12>
-    <v-card>
-      <v-card-media src="/static/img/home3.jpg" height="500px">
-      </v-card-media>
-    </v-card>
-</v-flex>
-   </section>
 
-
-
-
-
-      <section>
-       <gmap-map
-    :center="center"
-    :zoom="5"
-    style="width: auto; height: 300px"
-  >
-    <gmap-marker
-      :key="index"
-      v-for="(m, index) in markers"
-      :position="m.position"
-      :clickable="true"
-      :draggable="true"
-      @click="center=m.position"
-    ></gmap-marker>
-  </gmap-map>
-   </section>
    <section>
        <div
 
@@ -138,8 +137,13 @@
     </div>
   </div>
    </section>
+
+
   </v-content>
 </template>
+
+
+
 <script>
 
 import * as VueGoogleMaps from 'vue2-google-maps'
@@ -155,6 +159,7 @@ Vue.use(VueGoogleMaps, {
 })
 export default {
   data: () => ({
+    //Data Slider
     sliders: [
       { src: '/static/img/carouselHome/1_1900x1200.jpg',
         title: 'Documentos Online',
@@ -181,6 +186,7 @@ export default {
         text: 'No importa que seas independiente o trabajes para una firma esta es tu oportunidad de brindar asesorias desde tu hogar u oficina y generear honorarios extras',
         buttontext: 'Ver mas'}
     ],
+    //Data offers
     offers: [
       { src: '/static/img/home1Documentos.jpg',
         title: 'Documentos Online',
