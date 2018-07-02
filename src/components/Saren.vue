@@ -1,7 +1,9 @@
 <template>
 
     <div id = "Saren-Component">
-        <h2 class="subtitle is-2"> ---- Oficinas SAREN ---</h2>
+      <div id= "grad1" class ="grad"></div>
+        <h2 class="subtitle is-2 text"> Oficinas SAREN </h2>
+      <div id= "grad2" class ="grad"></div>   
         <div class = "columns">
           <div class="column is-two-fifths">
           <div id ='container-img'>
@@ -28,6 +30,7 @@
                   <option v-for = "oficina in oficinas" v-bind:key ="oficina.id">{{oficina}}</option>
               </select>
           </div>
+          <h3 ></h3>
           </div>
           <div id = 'map-container' class="column">
               <gmap-map :center ="center" :zoom = "zoom" style = "width:100%; height: 100%">
@@ -134,6 +137,29 @@ export default {
 <style>
 @import '../../node_modules/bulma/css/bulma.css';
 
+.grad {
+  height: 5px;
+  width: 400px;
+  background: rgb(44, 44, 44);
+  display: inline-block;
+  position: relative;
+  bottom: 12px;
+}
+
+#grad1 {
+  background: linear-gradient(to right, white, grey);
+  margin-right: 10px;
+}
+
+#grad2 {
+  background: linear-gradient(to right, grey, white);
+  margin-left: 10px;
+}
+.text {
+  display: inline-block;
+  margin-bottom: 40px;
+  text-align: center;
+}
 #map-container {
     width: 500px;
     height: 400px;
@@ -169,7 +195,7 @@ img {
   border-radius: 5px;
   position: absolute;
   float: right;
-  color: black;
+  color: rgb(46, 46, 46);
 } 
 
 
