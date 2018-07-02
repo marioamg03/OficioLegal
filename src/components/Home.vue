@@ -159,7 +159,7 @@ Vue.use(VueGoogleMaps, {
 })
 export default {
   data: () => ({
-    //Data Slider
+    // Data Slider
     sliders: [
       { src: '/static/img/carouselHome/1_1900x1200.jpg',
         title: 'Documentos Online',
@@ -186,7 +186,7 @@ export default {
         text: 'No importa que seas independiente o trabajes para una firma esta es tu oportunidad de brindar asesorias desde tu hogar u oficina y generear honorarios extras',
         buttontext: 'Ver mas'}
     ],
-    //Data offers
+    // Data offers
     offers: [
       { src: '/static/img/home1Documentos.jpg',
         title: 'Documentos Online',
