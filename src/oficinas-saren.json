@@ -1,0 +1,108 @@
+{
+    "tipos": {
+        "Registro Principal": {
+            "name": "Registro Principal",
+            "id": "1",
+            "estados": {
+                "apure": {
+                    "name": "apure",
+                    "oficinas": ["Registro Principal del estado Apure"]
+                },
+                "merida": {
+                    "name": "merida",
+                    "oficinas": ["Registro principal de merida"]
+                }
+                
+            }
+        },
+        "Registro Público": {
+            "name": "Registro Público",
+            "id": "2",
+            "estados": {
+                "amazonas": {
+                    "name": "amazonas",
+                    "oficinas": [
+                        "Registro Público de Puerto Ayacucho"
+                    ]
+                },
+                "apure": {
+                    "name": "apure",
+                    "oficinas":[
+                        "Registro público con funciones notariales del municipio Achaguas",
+                        "Registro público con funciones notariales del municipio Muñoz",
+                        "Registro público con funciones notariales del municipio Paez",
+                        "Registro público con funciones notariales del municipio Pedro Camejo",
+                        "Registro público con funciones notariales del municipio Rómulo Gallegos",
+                        "Registro Público del Municipio San Fernando"
+
+                    ]
+                },
+                "anzoategui": {
+                    "name": "anzoategui",
+                    "oficinas": [
+                        "Registro público con funciones notariales del municipio Juan Manuel Cajigal",
+                        "Registro público con funciones notariales del municipio Independencia",
+                        "Registro público con funciones notariales del municipio Libertad"  
+                    ]
+                },
+                "lara": {
+                    "name": "lara",
+                    "oficinas": [
+                        "Registro público con funciones notariales del municipio crespo",
+                        "Registro público del municipio Jimenez y Andres Eloy Blanco",
+                        "Registro público del municipio Morán Estado Lara"
+                    ]
+                },
+                "margarita": {
+                    "name": "margarita"
+                }
+
+            }
+        },
+        "Registro Mercantil": {
+            "name": "Registro Mercantil",
+            "id": "3",
+            "estados": {
+                "apure": {
+                    "name": "apure",
+                    "oficinas": [
+                        "Registro Mercantil Segundo de la Circunscripción Judicial del Distro del Alto Apure",
+                        "Registro Mercantil del Estado Apure"
+                    ]
+                }
+            }
+        },
+        "Notaria Pública": {
+            "name": "Notaria Pública",
+            "id": "4",
+            "estados":{
+                "amazonas": {
+                    "name": "amazonas",
+                    "oficinas": [
+                        "Notaría Pública de Puerto Ayacucho"
+                    ]
+                },
+                "apure": {
+                    "name": "apure",
+                    "oficinas": [
+                        "Notaría Pública de San Fernando de Apure",
+                        "Notaría Pública de Guasdualíto" 
+                    ]
+                },
+                "anzoategui":{
+                    "name":"anzoategui",
+                    "oficinas": [
+                        "Notaría Pública Primera de Barcelona",
+                        "Notaría Pública Primera de Puerto La Cruz",
+                        "Notaría Pública Segunda de Puerto La Cruz",
+                        "Notaría Pública Tercera de Puerto La Cruz",
+                        "Notaría Pública El Tigre",
+                        "Notaría Pública de Anaco",
+                        "Notaría Pública de Lecherias"
+                        
+                    ]
+                }
+            }
+        }
+    }  
+}

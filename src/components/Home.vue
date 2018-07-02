@@ -18,11 +18,11 @@
           <h2>¿Que Ofrecemos?</h2>
         </div>
       </v-layout>
-      <v-container grid-list-md fluid>
         <v-layout row wrap>
         <!-- template para la construccion de la seccion de que ofrecemos -->
           <offers v-for="offers in offers" v-bind:offers="offers"></offers>
         <!-- template para la construccion de la seccion de que ofrecemos -->
+      <v-container grid-list-md fluid>
         </v-layout>
       </v-container>
     </section>
@@ -53,20 +53,15 @@
        </v-flex>
      </section>
 <!-- Seccion Que Ofrecemos Documentos Asesorias FINAL-->
-
 <!-- Seccion Mapas INICIO-->
-     <section>
-       <gmap-map :center="center" :zoom="5" style="width: auto; height: 300px">
-         <gmap-marker :key="index" v-for="(m, index) in markers" :position="m.position" :clickable="true" :draggable="true" @click="center=m.position"></gmap-marker>
-       </gmap-map>
-     </section>
 <!-- Seccion Mapas FINAL-->
-
-
-
    <section>
+      <section>
+        <Saren></Saren>
+       
+   </section>
        <div
-
+    
     class="grey darken-3"
   >
     <div>
@@ -81,10 +76,10 @@
               <v-container fluid grid-list-lg>
                 <v-layout row>
                   <v-flex xs7n style="margin-top:15%">
-
+                    
                       <h1 class="display-3" style="text-align : center;">Contactanos</h1>
                       <div style="text-align : center;">Servicios legales online a la altura de tus necesidades</div>
-
+                  
                   </v-flex>
                   <v-flex xs5>
 <v-form v-model="valid" ref="form" lazy-validation>
@@ -125,7 +120,7 @@
     >
       ENVIAR
     </v-btn>
-
+    
   </v-form>
                   </v-flex>
                 </v-layout>
@@ -146,17 +141,10 @@
 
 <script>
 
-import * as VueGoogleMaps from 'vue2-google-maps'
-import Vue from 'vue'
+import Saren from './Saren'
+
 import sliders from './Slider.vue'
 import offers from './Whatweoffer.vue'
-
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: 'AIzaSyBCOiTGfsj8pf6jnJAUI441oTKtQb8hQaQ',
-    v: 'OPTIONAL VERSION NUMBER'
-  }
-})
 export default {
   data: () => ({
     // Data Slider
@@ -222,6 +210,9 @@ export default {
     sendMail () {
       //  TODO
     }
+  },
+  components: {
+    Saren
   }
 }
 </script>
@@ -241,3 +232,4 @@ export default {
 
 
 </style>
+
