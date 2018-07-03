@@ -1,6 +1,5 @@
 <template>
   <v-content>
-
 <!-- Seccion Slider INICO-->
     <section>
       <v-carousel style="height: 770px">
