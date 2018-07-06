@@ -193,9 +193,8 @@ img {
 .select-input {
   background: white;
   width: 175px;
-  margin-left: 30px;
+  margin-right: 10px;
   border-radius: 5px;
-  position: absolute;
   float: right;
   color: rgb(46, 46, 46);
 }
