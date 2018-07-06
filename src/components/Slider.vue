@@ -1,5 +1,5 @@
 <template>
-    <v-carousel-item  v-bind:src= sliders.src transition="fade" reverse-transition="fade" dark>
+    <v-carousel-item  v-bind:src= sliders.src transition="fade" reverse-transition="fade">
       <v-container fill-height>
         <v-layout align-center>
           <v-flex xs6 offset-xs1>
@@ -27,4 +27,16 @@ export default {
     height: 100vh !important;
     max-width: 500%;
 }
+</style>
+
+<style lang="stylus">
+  .fade
+    &-enter-active, &-leave-active, &-leave-to
+      transition: .3s ease-out
+      position: absolute
+      top: 0
+      left: 0
+
+    &-enter, &-leave, &-leave-to
+      opacity: 0
 </style>

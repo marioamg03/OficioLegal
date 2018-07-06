@@ -7,10 +7,10 @@
         <div class = "columns">
           <div class="column is-two-fifths">
           <div id ='container-img'>
-            <img src= '../../static/img/Boton 1.png'>
-            <img src= '../../static/img/Boton 2.png'>
-            <img src= '../../static/img/Boton 3.png'>
-            <img src= '../../static/img/Boton 4.png'>
+            <img id="img-cont" src= '../../static/img/Boton 1.png'>
+            <img id="img-cont" src= '../../static/img/Boton 2.png'>
+            <img id="img-cont" src= '../../static/img/Boton 3.png'>
+            <img id="img-cont" src= '../../static/img/Boton 4.png'>
         </div>
           <div class =" select-container">
               <label for = 'oficina'> Tipos de oficinas</label>
@@ -166,7 +166,7 @@ export default {
     height: 400px;
 }
 
-img {
+#img-cont {
     width: 90px
   }
 

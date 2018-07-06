@@ -1,9 +1,9 @@
 <template>
   <v-app>
 <!-- INICIO DEL MENU    -->
-    <v-toolbar fixed="true">
-      <v-toolbar-side-icon/>
-      <img src="/static/img/icons/logo.png" alt="Vuetify.js" height="60">
+    <v-toolbar fixed="true" height="70px">
+      <br>
+      <img src="/static/img/icons/logo.png" alt="Vuetify.js" style="height: 60px">
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat to="/home" >INICIO</v-btn>
@@ -81,47 +81,7 @@
  </v-content>
 
 <!-- INICIO DEL FOOTER    -->
-    <footer class="grey darken-2" height="250px">
-      <v-layout row wrap align-center>
-        <v-flex xs12>
-          <v-card flat>
-            <v-card-title class="grey darken-2">
-              <img src="/static/img/icons/logo.png" alt="Vuetify.js" height="60"class="pl-2">
-              <v-spacer></v-spacer>
-              <p class="white--text"> <v-icon size="24px" dark > fa-whatsapp</v-icon> +58 4145336976</p>
-              <v-spacer></v-spacer>
-              <p class="white--text"><v-icon size="24px" dark > email</v-icon> info@oficiolegal.com</p>
-              <v-spacer></v-spacer>
-              <v-btn v-for="icon in icons" :key="icon" icon class="mx-3" dark>
-                <v-icon size="24px" >{{ icon }}</v-icon>
-              </v-btn>
-            </v-card-title>
-            <v-card-text class="grey darken-1">
-              <v-layout class="white--text">
-                <v-flex xs4 layout column offset-xs2 >
-                  <span class="body-2 " >Documentos Online</span>
-                  <span class="body-2 " >Asesorias Online</span>
-                  <span class="body-2 " >Noticias Legales</span>
-                  <span class="body-2 " >Oficinas SAREN</span>
-                </v-flex>
-                <v-flex xs4 layout column>
-                  <span class="body-2 " >Talleres</span>
-                  <span class="body-2 " >Conferencias</span>
-                  <span class="body-2 " >Diplomados</span>
-                  <span class="body-2 " >Cursos</span>
-                </v-flex>
-                <v-flex xs4 layout column>
-                  <span class="body-2 " >Mision</span>
-                  <span class="body-2 " >Vision</span>
-                  <span class="body-2 " >Glosario</span>
-                </v-flex>
-              </v-layout>
-            </v-card-text>
-            <v-card-actions class="grey lighten-2 justify-center">&copy;2018 — <strong>OficioLegal</strong></v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </footer>
+  <PFooter></PFooter>
 <!-- FINAL DEL FOOTER    -->
 
   </v-content>
@@ -131,12 +91,12 @@
 <script>
   import Saren from './components/Saren'
   import contactf from './components/ContactForm'
+  import PFooter from './components/PFooter'
   import sliders from './components/Slider'
   import offers from './components/Whatweoffer'
 
   export default {
     data: () => ({
-      icons: ['fa-facebook', 'fa-twitter', 'fa-instagram'],
       // Data Slider
       sliders: [
         { src: '/static/img/carouselHome/1_1900x1200.jpg',
@@ -187,7 +147,6 @@
           buttoncolor: 'blue',
           color: '#2196F3'}
       ],
-
       rows: [
         {
           title: 'Documentos Online',
@@ -198,15 +157,14 @@
           children: ['Conferencias', 'Diplomados', 'Cursos']
         }
       ],
-
       drawer: null
-
     }),
     components: {
       sliders,
       offers,
       contactf,
-      Saren
+      Saren,
+      PFooter
     },
     computed: {
       binding () {
