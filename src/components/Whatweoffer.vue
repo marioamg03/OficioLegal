@@ -1,18 +1,19 @@
 <template>
-  <v-flex xs4 >
-    <v-card color="white" flat height="300px">
+  <v-flex xs4>
+    <v-card flat>
       <v-container fluid grid-list-lg>
-        <v-layout row>
-          <v-flex xs6>
-            <v-card-media v-bind:src= offers.src height="260px" width="260px"/>
-          </v-flex>
-          <v-flex xs6>
-            <div class="headline text-lg-left">{{offers.title}}</div>
-            <p></p>
-            <p class="text-lg-left">{{offers.text}}</p>
-            <v-card-actions>
-              <v-btn flat color="green right">{{offers.buttontext}}</v-btn>
-            </v-card-actions>
+        <v-layout row wrap>
+          <v-flex>
+            <div id="container">
+              <div id="leftThing">
+                <v-card-media v-bind:src= offers.src height="260px" width="260px"/>
+              </div>
+              <div id="rightThing">
+                <div class="headline" style="text-align: center" v-bind:style="{ color: offers.color}">{{offers.title}}</div>
+                <div>{{offers.text}}</div>
+                <div><v-btn outline :color=offers.buttoncolor >{{offers.buttontext}}</v-btn></div>
+              </div>
+            </div>
           </v-flex>
         </v-layout>
       </v-container>
@@ -32,4 +33,31 @@ export default {
   .v-card__media__background {
     border-radius: 8%;
   }
+
+  #container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  }
+
+  #leftThing {
+    width: 50%;
+  }
+
+  #rightThing {
+    width: 50%;
+    padding-left:10px;
+    align-items: center;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  #contenido{
+    flex: 1;
+    width: 100%;
+  }
+
 </style>

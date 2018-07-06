@@ -26,13 +26,15 @@
 <!-- Secion Slider FINAL-->
 
 <!-- Seccion Que Ofrecemos INICO-->
-  <section>
+  <section style="margin-bottom: 100px">
     <v-layout column wrap class="my-5" align-center>
       <div class="text-xs-center titulo">
-        <h2>¿Que Ofrecemos?</h2>
+        <div id= "grad1" class ="grad"></div>
+          <h2 class="subtitle is-2 text">¿Que Ofrecemos?</h2>
+        <div id= "grad2" class ="grad"></div>
       </div>
     </v-layout>
-      <v-layout row wrap>
+      <v-layout v-bind="binding">
       <!-- template para la construccion de la seccion de que ofrecemos -->
         <offers v-for="offers in offers" v-bind:offers="offers"></offers>
       <!-- template para la construccion de la seccion de que ofrecemos -->
@@ -193,17 +195,23 @@
         { src: '/static/img/home1Documentos.jpg',
           title: 'Documentos Online',
           text: 'Realiza automaticamente tus documentos legales visados y listos desde la comodidad de tu hogar u oficina; Experimenta la innovacion tecnologica de ser un abogado.',
-          buttontext: '¿Como funciona?'},
+          buttontext: '¿Como funciona?',
+          buttoncolor: 'blue',
+          color: '#2196F3'},
 
         { src: '/static/img/home2Aseso.jpg',
           title: 'Asesorias Online',
           text: 'Asesorias en vivo a traves de una videollamada con nuestros abogados especializados en el area legal segun tu necesidad y en el horario de su comodidad.',
-          buttontext: 'Ven y asesorate'},
+          buttontext: 'Ven y asesorate',
+          buttoncolor: 'green',
+          color: '#4CAF50'},
 
         { src: '/static/img/home3Registro.jpg',
           title: 'Registrate',
           text: 'Podras registrarte como Usuario(a) o Abogado(a) para disfrutar de las ventajas que ofrecemos en nuestra plataforma y puedas hacer uso de las actualizaciones.',
-          buttontext: 'Registrate aqui'}
+          buttontext: 'Registrate aqui',
+          buttoncolor: 'blue',
+          color: '#2196F3'}
       ],
 
       rows: [
@@ -229,6 +237,13 @@
       sliders,
       offers,
       Saren
+    },
+    computed: {
+      binding () {
+        const binding = {}
+        if (this.$vuetify.breakpoint.smAndDown) binding.column = true
+        return binding
+      }
     },
     props: {
       source: String

@@ -2,7 +2,7 @@
     <v-carousel-item  v-bind:src= sliders.src transition="fade" reverse-transition="fade" dark>
       <v-container fill-height>
         <v-layout align-center>
-          <v-flex xs4 offset-xs1>
+          <v-flex xs6 offset-xs1>
             <h3 class="display-1 white--text">{{sliders.title}}</h3>
             <span class="subheading white--text">{{sliders.text}}</span>
             <v-divider class="my-3"></v-divider>
