@@ -17,7 +17,7 @@
 <v-content>
 <!-- Seccion Slider INICO-->
   <section>
-    <v-carousel style="height: 770px">
+    <v-carousel style="height: 100vh">
       <!-- template para la construccion de la seccion de slider -->
       <sliders v-for="sliders in sliders" v-bind:sliders="sliders"></sliders>
       <!-- fin del template para la construccion de la seccion de slider -->

@@ -1,5 +1,5 @@
 <template>
-    <v-carousel-item v-bind:src= sliders.src transition="fade" reverse-transition="fade" dark height="500px">
+    <v-carousel-item  v-bind:src= sliders.src transition="fade" reverse-transition="fade" dark>
       <v-container fill-height>
         <v-layout align-center>
           <v-flex xs4 offset-xs1>
@@ -21,3 +21,10 @@ export default {
 }
 // fin del componente para la seccion del slider
 </script>
+
+<style>
+.v-jumbotron__image {
+    height: 100vh !important;
+    max-width: 500%;
+}
+</style>

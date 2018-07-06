@@ -3,7 +3,7 @@
     <div id = "Saren-Component">
       <div id= "grad1" class ="grad"></div>
         <h2 class="subtitle is-2 text"> Oficinas SAREN </h2>
-      <div id= "grad2" class ="grad"></div>   
+      <div id= "grad2" class ="grad"></div>
         <div class = "columns">
           <div class="column is-two-fifths">
           <div id ='container-img'>
@@ -35,13 +35,13 @@
           <div id = 'map-container' class="column">
               <gmap-map :center ="center" :zoom = "zoom" style = "width:100%; height: 100%">
                 <gmap-marker :position = "center">
-                  </gmap-marker> 
+                  </gmap-marker>
                 <!-- <gmap-marker :key ="index" v-for= "(m,index) in markers" :position = "m.position">
                   </gmap-marker> -->
 
               </gmap-map>
           </div>
-        </div>  
+        </div>
     </div>
 
 </template>
@@ -160,17 +160,19 @@ export default {
   margin-bottom: 40px;
   text-align: center;
 }
+
 #map-container {
     width: 500px;
     height: 400px;
 }
+
 img {
     width: 90px
   }
 
 #Saren-Component {
   margin: 40px 80px 40px 80px; /*  top right bottom left */
-}  
+}
 
 #Saren-Component h2 {
   text-align: center;
@@ -191,13 +193,12 @@ img {
 .select-input {
   background: white;
   width: 175px;
-  margin-left: 30px;  
+  margin-left: 30px;
   border-radius: 5px;
   position: absolute;
   float: right;
   color: rgb(46, 46, 46);
-} 
+}
 
 
 </style>
-

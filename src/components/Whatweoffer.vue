@@ -28,3 +28,8 @@ export default {
 }
 // fin del componente para la seccion del slider
 </script>
+<style>
+  .v-card__media__background {
+    border-radius: 8%;
+  }
+</style>
