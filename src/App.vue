@@ -59,12 +59,14 @@
 <!-- Seccion Solucion Juridica FINAL-->
 
 <!-- Seccion Que Ofrecemos Documentos Asesorias INICIO-->
-   <section>
-     <v-flex xs12>
-       <v-card>
-         <v-card-media src="/static/img/home3.jpg" height="500px"></v-card-media>
-       </v-card>
-     </v-flex>
+  <section id="documentos-asesorias">
+    <h1 style="display: inline-block"> Documentos Online </h1>
+    <div id= "grad3" class ="grad"></div>
+    <div class="columns">
+     <guia v-for="paso in steps" v-bind:paso="paso" v-bind:key ="paso.number">
+
+     </guia>
+    </div>
    </section>
 <!-- Seccion Que Ofrecemos Documentos Asesorias FINAL-->
 
@@ -90,6 +92,7 @@
 
 <script>
   import Saren from './components/Saren'
+  import guia from './components/Guia.vue'
   import contactf from './components/ContactForm'
   import PFooter from './components/PFooter'
   import sliders from './components/Slider'
@@ -157,6 +160,27 @@
           children: ['Conferencias', 'Diplomados', 'Cursos']
         }
       ],
+
+      // Data documentos online guia
+
+      steps: [
+        { number: 1,
+          text: 'Registrate como usuario y selecciona el tipo de documento que deseas tramitar segun tu necesidad.',
+          src: '../static/img/1-guia.png'
+        },
+        { number: 2,
+          text: 'Llena los formularios en blanco y sigue las instrucciones y recomendaciones finales.',
+          src: '../static/img/2-guia.png'
+        },
+        { number: 3,
+          text: 'Cancelar a través de tu tarjeta de crédito, deposito o transferencia.',
+          src: '../static/img/3-guia.png'
+        },
+        { number: 4,
+          text: 'Imprime el documento y presentalo ante la notaria o registro según sean el caso.',
+          src: '../static/img/4-guia.png'
+        }
+      ],
       drawer: null
     }),
     components: {
@@ -164,7 +188,8 @@
       offers,
       contactf,
       Saren,
-      PFooter
+      PFooter,
+      guia
     },
     computed: {
       binding () {
@@ -178,3 +203,26 @@
     }
   }
 </script>
+
+<style>
+@import '../node_modules/bulma/css/bulma.css';
+
+#documentos-asesorias h1{
+  margin-left: 30px;
+  margin-top: 40px;
+}
+.grad {
+  height: 5px;
+  width: 400px;
+  background: rgb(44, 44, 44);
+  display: inline-block;
+  position: relative;
+  bottom: 0px;
+}
+
+#grad3 {
+  background: linear-gradient(to right, grey, white);
+  margin-left: 10px;
+}
+
+</style>
