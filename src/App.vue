@@ -59,13 +59,17 @@
 <!-- Seccion Solucion Juridica FINAL-->
 
 <!-- Seccion Que Ofrecemos Documentos Asesorias INICIO-->
-   <section>
-     <v-flex xs12>
-       <v-card>
-         <v-card-media src="/static/img/home3.jpg" height="500px"></v-card-media>
-       </v-card>
-     </v-flex>
-   </section>
+  <section>
+    <v-layout column wrap class="my-5" align-center>
+      <div class="text-xs-left titulo">
+          <h2 class="subtitle is-2 text">Documentos Online</h2>
+        <div id= "grad2" class ="grad"></div>
+      </div>
+    </v-layout>
+    <v-layout v-bind="binding">
+      <step v-for= "paso in steps" v-bind:paso="paso" v-bind:key="paso.number"></step>
+    </v-layout>
+  </section>
 <!-- Seccion Que Ofrecemos Documentos Asesorias FINAL-->
 
 <!-- Seccion Mapas INICIO-->
@@ -94,6 +98,7 @@
   import PFooter from './components/PFooter'
   import sliders from './components/Slider'
   import offers from './components/Whatweoffer'
+  import step from './components/Steps.vue'
 
   export default {
     data: () => ({
@@ -157,6 +162,25 @@
           children: ['Conferencias', 'Diplomados', 'Cursos']
         }
       ],
+      // Data steps
+      steps: [
+        { number: 1,
+          text: 'Registrate como usuario y selecciona el tipo de documento que deseas tramitar segun tu necesidad.',
+          src: '../static/img/steps/1.png'
+        },
+        { number: 2,
+          text: 'Llena los formularios en blanco y sigue las instrucciones y recomendaciones finales.',
+          src: '../static/img/steps/2.png'
+        },
+        { number: 3,
+          text: 'Cancelar a través de tu tarjeta de crédito, deposito o transferencia.',
+          src: '../static/img/steps/3.png'
+        },
+        { number: 4,
+          text: 'Imprime el documento y presentalo ante la notaria o registro según sean el caso.',
+          src: '../static/img/steps/4.png'
+        }
+      ],
       drawer: null
     }),
     components: {
@@ -164,7 +188,8 @@
       offers,
       contactf,
       Saren,
-      PFooter
+      PFooter,
+      step
     },
     computed: {
       binding () {
