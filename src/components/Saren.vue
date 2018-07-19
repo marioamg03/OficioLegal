@@ -1,49 +1,52 @@
 <template>
+  <v-layout v-bind="binding">  <!-- Layout componente  INICIO-->
+    <v-layout> <!-- Layout selectores e imagenes INICIO-->
+      <v-flex>
+        <v-card flat>
 
-    <div id = "Saren-Component">
-      <div id= "grad1" class ="grad"></div>
-        <h2 class="subtitle is-2 text"> Oficinas SAREN </h2>
-      <div id= "grad2" class ="grad"></div>
-        <div class = "columns">
-          <div class="column is-two-fifths">
-          <div id ='container-img'>
-            <img id="img-cont" src= '../../static/img/Boton 1.png'>
-            <img id="img-cont" src= '../../static/img/Boton 2.png'>
-            <img id="img-cont" src= '../../static/img/Boton 3.png'>
-            <img id="img-cont" src= '../../static/img/Boton 4.png'>
-        </div>
-          <div class =" select-container">
-              <label for = 'oficina'> Tipos de oficinas</label>
-              <select id = 'oficina' v-model="seleccionTipoOficina" class="select-input">
-                  <option v-for="tipoOficina in tiposOficinas" v-bind:key ="tipoOficina.id"> {{tipoOficina.name}}</option>
-              </select>
+          <div id = "select-container">
+            <v-avatar :tile = "tile" :size = "imgSize">
+              <img src="../../static/img/Boton 1.png" alt = "Registro Principal">
+            </v-avatar>
+            <v-avatar :tile = "tile" :size = "imgSize">
+              <img src="../../static/img/Boton 2.png" alt = "Registro Público">
+            </v-avatar>
+            <v-avatar :tile = "tile" :size = "imgSize">
+              <img src="../../static/img/Boton 3.png" alt = "Registro Mercantil">
+            </v-avatar>
+            <v-avatar :tile = "tile" :size = "imgSize">
+              <img src="../../static/img/Boton 4.png" alt = "Notaria Pública">
+            </v-avatar>
+            
+            <v-select
+              label="Tipo oficinas"
+            ></v-select>
+            <v-select
+              label= "Estado"
+            ></v-select>
+            <v-select
+              label = "Municipio"
+            ></v-select>
+            <v-select
+              label = "Oficina"
+            ></v-select>
           </div>
-          <div class ="select-container">
-              <label for = 'estado'> Estado</label>
-              <select id = 'estado' v-model="seleccionEstado" class="select-input">
-                  <option v-for = "estado in estados" v-bind:key="estado.id"> {{estado.name}}</option>
-              </select>
-          </div>
-          <div class =" select-container">
-              <label for = 'nombreOficina'> Oficina</label>
-              <select id = 'nombreOficina' v-model="seleccionOficina" class="select-input">
-                  <option v-for = "oficina in oficinas" v-bind:key ="oficina.id">{{oficina}}</option>
-              </select>
-          </div>
-          <h3 ></h3>
-          </div>
-          <div id = 'map-container' class="column">
-              <gmap-map :center ="center" :zoom = "zoom" style = "width:100%; height: 100%">
-                <gmap-marker :position = "center">
-                  </gmap-marker>
-                <!-- <gmap-marker :key ="index" v-for= "(m,index) in markers" :position = "m.position">
-                  </gmap-marker> -->
+        </v-card>
+      </v-flex>
+    </v-layout> <!-- Layout selectores e imagenes FIN-->
 
-              </gmap-map>
-          </div>
-        </div>
-    </div>
+    <v-layout row wrap> <!-- Layout mapa INICIO-->
+      <v-flex xs8>      
+        
+            <gmap-map :center = "center" :zoom = "zoom" style = "width:100%; height: 100%">
+              <gmap-marker :position = "center"></gmap-marker>
+            </gmap-map>
+          
+      </v-flex>
+      
+    </v-layout> <!-- Layout mapa FIN -->
 
+  </v-layout> <!-- Layout componente FIN-->
 </template>
 
 
@@ -70,7 +73,9 @@ export default {
       seleccionTipoOficina: '',
       seleccionEstado: '',
       seleccionOficina: '',
-      zoom: 4
+      zoom: 4,
+      tile: true,
+      imgSize: '90px'
     }
   },
   mounted () {
@@ -130,74 +135,28 @@ export default {
     loadData: function () {
       this.tiposOficinas = info.tipos
     }
+  },
+  computed: {
+    binding () {
+      const binding = {}
+      if (this.$vuetify.breakpoint.smAndDown) binding.column = true
+      return binding
+    }
   }
 }
 </script>
 
-<style>
-@import '../../node_modules/bulma/css/bulma.css';
+<style >
 
-.grad {
-  height: 5px;
-  width: 400px;
-  background: rgb(44, 44, 44);
-  display: inline-block;
-  position: relative;
-  bottom: 12px;
-}
-
-#grad1 {
-  background: linear-gradient(to right, white, grey);
-  margin-right: 10px;
-}
-
-#grad2 {
-  background: linear-gradient(to right, grey, white);
-  margin-left: 10px;
-}
-.text {
-  display: inline-block;
-  margin-bottom: 40px;
-  text-align: center;
+#select-container {
+  width: 100%;
 }
 
 #map-container {
-    width: 500px;
-    height: 400px;
-}
-
-#img-cont {
-    width: 90px
-  }
-
-#Saren-Component {
-  margin: 40px 80px 40px 80px; /*  top right bottom left */
-}
-
-#Saren-Component h2 {
-  text-align: center;
-}
-
-.select-container {
-  background: rgb(175, 174, 174);
-  color: white;
-  height: 35px;
-  width: 370px;
-  margin: 10px 0px; /*  top and botton right and left */
-  border-radius: 10px;
-  padding-left: 30px;
-  padding-top: 5px;
-
-}
-
-.select-input {
-  background: white;
-  width: 175px;
-  margin-right: 10px;
-  border-radius: 5px;
-  float: right;
-  color: rgb(46, 46, 46);
+  width: 500px;
+  height: 300px;
 }
 
 
-</style>
+
+</style> 

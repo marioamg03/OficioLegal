@@ -1,5 +1,5 @@
 <template>
-  
+  <v-flex xs4>
       <v-card  
         id= "card" 
         flat 
@@ -41,7 +41,10 @@ export default {
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 89px;
+  top: 14px;
+  
+  display: flex;
+  align-items: center;
   }
 
   #card:hover{

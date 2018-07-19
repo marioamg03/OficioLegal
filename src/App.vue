@@ -59,7 +59,7 @@
 <!-- Seccion Solucion Juridica FINAL-->
 
 <!-- Seccion Que Ofrecemos Documentos Asesorias INICIO-->
-  <section>
+  <section style="margin-bottom: 100px">
     <v-layout column wrap class="my-5" align-center>
       <div class="text-xs-left titulo">
           <h2 class="subtitle is-2 text">Documentos Online</h2>
@@ -72,9 +72,20 @@
   </section>
 <!-- Seccion Que Ofrecemos Documentos Asesorias FINAL-->
 
-<!-- Seccion Mapas INICIO-->
-   <section>
-     <Saren></Saren>
+<!-- Seccion Mapas INICIO -->
+   <section style="margin-bottom: 100px">
+     <v-layout column wrap class="my-5" align-center>
+      <div class="text-xs-center titulo">
+        <div id= "grad1" class ="grad"></div>
+          <h2 class="subtitle is-2 text">Oficinas Saren</h2>
+        <div id= "grad2" class ="grad"></div>
+      </div>
+    </v-layout>
+
+   <v-container fluid>
+      <Saren></Saren>
+    </v-container>
+     
    </section>
 <!-- Seccion Mapas FINAL-->
 
@@ -203,3 +214,8 @@
     }
   }
 </script>
+
+<style>
+  
+
+</style>
