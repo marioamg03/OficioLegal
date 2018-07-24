@@ -59,7 +59,7 @@
 <!-- Seccion Solucion Juridica FINAL-->
 
 <!-- Seccion Que Ofrecemos Documentos Asesorias INICIO-->
-  <section style="margin-bottom: 100px">
+  <section style="margin-bottom: 50px">
     <v-layout column wrap class="my-5" align-center>
       <div class="text-xs-left titulo">
           <h2 class="subtitle is-2 text">Documentos Online</h2>
@@ -73,7 +73,7 @@
 <!-- Seccion Que Ofrecemos Documentos Asesorias FINAL-->
 
 <!-- Seccion Mapas INICIO -->
-   <section style="margin-bottom: 100px">
+   <section style="margin-bottom: 50px" >
      <v-layout column wrap class="my-5" align-center>
       <div class="text-xs-center titulo">
         <div id= "grad1" class ="grad"></div>
@@ -82,7 +82,7 @@
       </div>
     </v-layout>
 
-   <v-container fluid>
+   <v-container grid-list-xl >
       <Saren></Saren>
     </v-container>
      
@@ -216,6 +216,26 @@
 </script>
 
 <style>
+  .grad {
+    height: 5px;
+    width: 400px;
+    background: rgb(44, 44, 44);
+    display: inline-block;
+    position: relative;
+    bottom: 5px;
+  }  
   
+  #grad1 {
+    background: linear-gradient(to right, white, grey);
+    margin-right: 10px;
+  }
 
+  #grad2 {
+    background: linear-gradient(to right, grey, white);
+    margin-left: 10px;
+  }
+
+  h2{
+    display: inline-block;
+  }
 </style>

@@ -1,9 +1,7 @@
 <template>
-  <v-layout v-bind="binding">  <!-- Layout componente  INICIO-->
-    <v-layout> <!-- Layout selectores e imagenes INICIO-->
-      <v-flex>
-        <v-card flat>
-
+  <v-layout row justify-space-around v-bind="binding">  <!-- Layout componente  INICIO-->
+      <v-flex xs10> <!-- Layout selectores e imagenes INICIO-->
+        <v-card flat >
           <div id = "select-container">
             <v-avatar :tile = "tile" :size = "imgSize">
               <img src="../../static/img/Boton 1.png" alt = "Registro Principal">
@@ -19,32 +17,66 @@
             </v-avatar>
             
             <v-select
-              label="Tipo oficinas"
-            ></v-select>
+              label="  Tipos de oficinas"
+              v-model = 'seleccionTipoOficina'
+              :items = 'oficinas'
+              height = "40"
+              background-color = 'grey lighten-2'
+            >
+             
+            </v-select>
             <v-select
-              label= "Estado"
+              label= "  Estado"
+              :items = 'estado'
+              v-model = 'seleccionEstado'
+              height = "40"
+               background-color = 'grey lighten-2'
             ></v-select>
+
             <v-select
-              label = "Municipio"
+              label = "  Municipios"
+              v-model = 'seleccionMunicipio'
+              :items = 'municipio'
+              height = "40"
+              background-color = 'grey lighten-2'
             ></v-select>
+
             <v-select
-              label = "Oficina"
+              label = "  Oficina"
+              v-model = 'seleccionOficina'
+              :items = 'ofi'
+              height = "40"
+               background-color = 'grey lighten-2'
+               light
             ></v-select>
+
           </div>
         </v-card>
-      </v-flex>
-    </v-layout> <!-- Layout selectores e imagenes FIN-->
-
-    <v-layout row wrap> <!-- Layout mapa INICIO-->
-      <v-flex xs8>      
-        
-            <gmap-map :center = "center" :zoom = "zoom" style = "width:100%; height: 100%">
-              <gmap-marker :position = "center"></gmap-marker>
-            </gmap-map>
+      </v-flex> <!-- Layout selectores e imagenes FIN-->
+ 
+      <v-flex xs12> <!-- Layout mapa INICIO-->
+        <v-card flat>
+            <v-layout row wrap>
+              <v-flex>
+              <div id="map-container"> 
+                  <gmap-map :center = "center" :zoom = "zoom" style="width:600px; height:400px">
+                    <gmap-marker :position = "center"></gmap-marker>
+                  </gmap-map> 
+                  </div>
+               
+              </v-flex>
+            </v-layout>
           
-      </v-flex>
+
+         
+          
+        </v-card>
       
-    </v-layout> <!-- Layout mapa FIN -->
+            
+          
+      </v-flex> <!-- Layout mapa FIN -->
+      
+    
 
   </v-layout> <!-- Layout componente FIN-->
 </template>
@@ -68,18 +100,29 @@ export default {
       markers: [],
       tiposOficinas: [],
       estados: [],
+      municipios: [],
       oficinas: [],
       direccion: '',
       seleccionTipoOficina: '',
       seleccionEstado: '',
       seleccionOficina: '',
+      seleccionMunicipio: '',
       zoom: 4,
-      tile: true,
-      imgSize: '90px'
+      tile: true, // avatar
+      imgSize: '90px',
+      estado: [],
+      municipio: [],
+      ofi: []
+
     }
   },
   mounted () {
     this.loadData()
+    console.log(this.tiposOficinas)
+    console.log(Object.entries(this.tiposOficinas))
+    Object.entries(this.tiposOficinas).forEach(([key]) => {
+      this.oficinas.push(key)
+    })
   },
   watch: {
     seleccionTipoOficina () {
@@ -87,11 +130,25 @@ export default {
       console.log(this.seleccionTipoOficina)
       this.estados = this.tiposOficinas[this.seleccionTipoOficina].estados
       console.log(this.estados)
+      Object.entries(this.estados).forEach(([key]) => {
+        this.estado.push(key)
+      })
     },
     seleccionEstado () {
       console.log('eligieron el estado')
       console.log(this.seleccionEstado)
-      this.oficinas = this.estados[this.seleccionEstado].oficinas
+      //  this.oficinas = this.estados[this.seleccionEstado].oficinas
+      this.municipios = this.estados[this.seleccionEstado].municipios
+      console.log(this.municipios)
+
+      Object.entries(this.municipios).forEach(([key]) => {
+        this.municipio.push(key)
+      })
+    },
+    seleccionMunicipio () {
+      console.log('eligieron el municipio')
+      console.log(this.seleccionMunicipio)
+      this.ofi = this.municipios[this.seleccionMunicipio].oficinas
       console.log(this.oficinas)
     },
     seleccionOficina () {
@@ -134,6 +191,9 @@ export default {
     },
     loadData: function () {
       this.tiposOficinas = info.tipos
+    },
+    change: function () {
+      console.log('cambiaron valor input')
     }
   },
   computed: {
@@ -153,10 +213,21 @@ export default {
 }
 
 #map-container {
-  width: 500px;
-  height: 300px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
+.vue-map-container,
+.vue-map-container -vue-map {
+  width: 100%;
+  height: 100%
+}
 
+.v-input__slot {
+    margin-bottom: -10px;
+    color: white;
+  }
 
 </style> 

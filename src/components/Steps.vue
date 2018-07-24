@@ -30,7 +30,6 @@ export default {
   name: 'step',
   props: ['paso'],
   data () {
-    console.log(this.props)
     return {
     }
   }
