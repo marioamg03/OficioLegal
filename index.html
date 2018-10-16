@@ -12,4 +12,15 @@
   <body>
     <div id="app"></div>
   </body>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>
+    $(function() {
+      $("li").click(function(e) {
+        e.preventDefault();
+        $("li").removeClass("active");
+        $(this).addClass("active");
+      });
+    });
+  </script>
 </html>

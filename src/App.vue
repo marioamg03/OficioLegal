@@ -1,19 +1,8 @@
 <template>
   <v-app>
 <!-- INICIO DEL MENU    -->
-    <v-toolbar fixed="true" height="70px">
-      <br>
-      <img src="/static/img/icons/logo.png" alt="Vuetify.js" style="height: 60px">
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat to="/home" >INICIO</v-btn>
-        <v-btn flat to="/documentos">Documentos online</v-btn>
-        <v-btn flat>Asesorias online</v-btn>
-        <v-btn flat>Noticias Legales</v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
+<Menu style="margin-bottom:-100vh; z-index: 1; height: 100vh;"></Menu>
 <!-- INICIO DEL MENU    -->
-
 <v-content>
 <!-- Seccion Slider INICO-->
   <section>
@@ -97,6 +86,7 @@
   import PFooter from './components/PFooter'
   import sliders from './components/Slider'
   import offers from './components/Whatweoffer'
+  import Menu from './components/Menu'
 
   export default {
     data: () => ({
@@ -189,7 +179,8 @@
       contactf,
       Saren,
       PFooter,
-      guia
+      guia,
+      Menu
     },
     computed: {
       binding () {
