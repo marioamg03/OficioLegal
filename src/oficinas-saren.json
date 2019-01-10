@@ -6,7 +6,20 @@
             "estados": {
                 "apure": {
                     "name": "apure",
-                    "oficinas": ["Registro Principal del estado Apure"]
+                    "municipios": {
+                      "San Fernando ": {
+                        "name": "San fernando",
+                        "oficinas": ["Registro Principal del estado Apure", "la oficina del coño de tu madre"]
+                      }
+                    }
+                },
+                "anzoategui": {
+                  "municipios": {
+                    "Simón Bolivar": {
+                      "oficinas": ["Registro Principal de Barcelona"]
+                    }
+                    
+                  }
                 },
                 "merida": {
                     "name": "merida",
@@ -21,29 +34,89 @@
             "estados": {
                 "amazonas": {
                     "name": "amazonas",
-                    "oficinas": [
-                        "Registro Público de Puerto Ayacucho"
-                    ]
+                    "municipios": {
+                      "Alto Orinoco": {
+                        "name": "Alto Orinoco",
+                        "oficinas": ["Registro Público de Puerto Ayacucho"]
+                      }
+                    }  
                 },
                 "apure": {
                     "name": "apure",
-                    "oficinas":[
-                        "Registro público con funciones notariales del municipio Achaguas",
-                        "Registro público con funciones notariales del municipio Muñoz",
-                        "Registro público con funciones notariales del municipio Paez",
-                        "Registro público con funciones notariales del municipio Pedro Camejo",
-                        "Registro público con funciones notariales del municipio Rómulo Gallegos",
-                        "Registro Público del Municipio San Fernando"
-
-                    ]
+                    "municipios": {
+                      "Achaguas": {
+                        "name": "Achaguas",
+                        "oficinas": ["Registro público con funciones notariales del municipio Achaguas"]
+                      },
+                      "Muñoz": {
+                        "oficinas": ["Registro público con funciones notariales del municipio Muñoz"]
+                      },
+                      "Paez": {
+                        "oficinas": ["Registro público del municipio Páez"]
+                      },
+                      "Pedro Camejo": {
+                        "oficinas": ["Registro público con funciones notariales del Municipio Pedro Camejo"]
+                      },
+                      "Romulo Gallegos": {
+                        "oficinas": ["Registro público con funciones notariales del Municipio Romulo Gallegos"]
+                      },
+                      "San Fernando": {
+                        "oficinas": ["Registro público del municipio San Fernando"]
+                      }
+                    }   
                 },
                 "anzoategui": {
                     "name": "anzoategui",
-                    "oficinas": [
-                        "Registro público con funciones notariales del municipio Juan Manuel Cajigal",
-                        "Registro público con funciones notariales del municipio Independencia",
-                        "Registro público con funciones notariales del municipio Libertad"  
-                    ]
+                    "municipios": {
+                      "Juan Manuel Cajigal": {
+                        "oficinas": ["Registro público con funciones notariales del municipio Juan Manuel Cajigal"]
+                      },
+                      "Independencia": {
+                        "oficinas": ["Registro público con funciones notariales del municipio Independencia"]
+                      },
+                      "Libertad": {
+                        "oficinas": ["Registro público con funciones notariales del municipio Libertad"]
+                      },
+                      "Anaco": {
+                        "oficinas": ["Registro Público del municipio Anaco"]
+                      },
+                      "Aragua": {
+                        "oficinas": ["Registro Público del Municipio Aragua"]
+                      },
+                      "Simón Bolívar": {
+                        "oficinas": ["Registro Público del Municipio Simón Bolívar"]
+                      },
+                      "Manuel Ezequiel Bruzual": {
+                        "oficinas": ["Registro Público con funciones notariales del municipio Manuel Ezequiel Bruzual"]
+                      },
+                      "Diego Bautista Urbaneja": {
+                        "oficinas": ["Registro Público del Municipio Diego Bautista Urbaneja"]
+                      },
+                      "Pedro María Freites":{
+                        "oficinas": ["Registro Público con funciones notariales del municipio Pedro María Freites"]
+                      },
+                      "San José de Guanipa": {
+                        "oficinas": ["Registro Público del Municipio San José de Guanipa"]
+                      },
+                      "Francisco de Miranda": {
+                        "oficinas": ["Registro Público del Municipio Francisco de Miranda"]
+                      },
+                      "Jose Gregorio Monagas": {
+                        "oficinas":["Registro Público del Municipio Jose Gregorio Monagas"]
+                      },
+                      "Fernando Peñalver": {
+                        "oficinas": ["Registro Público del Municipio Fernando Peñalver"]
+                      },
+                      "Piritu": {
+                        "oficinas": ["Registro Público con funciones notariales de los Municipios Píritu y San Juan de Capistrano"]
+                      },
+                      "Simón Rodríguez": {
+                        "oficinas": ["Registro Público del Municipio Simón Rodríguez"]
+                      },
+                      "Juan Antonio Sotillo": {
+                        "oficinas": ["Registro Público del Municipio Juan Antonio Sotillo"]
+                      }
+                    }
                 },
                 "lara": {
                     "name": "lara",
@@ -58,19 +131,37 @@
                 }
 
             }
+          
+        
         },
         "Registro Mercantil": {
             "name": "Registro Mercantil",
             "id": "3",
             "estados": {
-                "apure": {
-                    "name": "apure",
-                    "oficinas": [
-                        "Registro Mercantil Segundo de la Circunscripción Judicial del Distro del Alto Apure",
-                        "Registro Mercantil del Estado Apure"
+              "apure": {
+                "name": "apure",
+                "municipios": {
+                  "Guasdualito": {
+                    "name": "Guasdualito ",
+                    "oficinas": ["Registro Mercantil Segundo de la Circunscripción Judicial del Distro del Alto Apure"
+                               
                     ]
+                  },
+                  "San Fernando": {
+                    "oficinas": [ "Registro Mercantil del Estado Apure"]
+                  }
                 }
-            }
+              },
+              "Anzoátegui": {
+                "municipios": {
+                  "Simon Bólivar": {
+                    "oficinas": ["Registro Mercantil Primero del Estado Anzoátegui",
+                    "Registro Mercantil Segundo del Estado Anzoátegui",
+                    "Registro Mercantil Tercero del Estado Anzoátegui"]
+                  }
+                }
+              }
+            }  
         },
         "Notaria Pública": {
             "name": "Notaria Pública",
@@ -78,31 +169,57 @@
             "estados":{
                 "amazonas": {
                     "name": "amazonas",
-                    "oficinas": [
-                        "Notaría Pública de Puerto Ayacucho"
-                    ]
+                    "municipios": {
+                      "municipio Rio Negro": {
+                        "oficinas": [
+                          "Notaría Pública de Puerto Ayacucho"
+                        ]
+                      }  
+                    }   
                 },
                 "apure": {
                     "name": "apure",
-                    "oficinas": [
-                        "Notaría Pública de San Fernando de Apure",
-                        "Notaría Pública de Guasdualíto" 
-                    ]
+                    "municipios": {
+                      "San Fernando": {
+                        "name": "San fernando",
+                        "oficinas": ["Notaría Pública de San Fernando de Apure"]
+                      },
+                      "Guasdualito": {
+                        "oficinas": ["Notaría Pública de Guasdualito estado Apure"]
+                      }
+                    }
                 },
                 "anzoategui":{
                     "name":"anzoategui",
-                    "oficinas": [
-                        "Notaría Pública Primera de Barcelona",
-                        "Notaría Pública Primera de Puerto La Cruz",
-                        "Notaría Pública Segunda de Puerto La Cruz",
-                        "Notaría Pública Tercera de Puerto La Cruz",
-                        "Notaría Pública El Tigre",
-                        "Notaría Pública de Anaco",
-                        "Notaría Pública de Lecherias"
-                        
-                    ]
+                    "municipios": {
+                      "Simon Bolivar": {
+                        "oficinas": ["Notaría Pública Primera de Barcelona",
+                        "Notaría Pública Segunda del Tigre"]
+                      },
+                      "Juan Antonio Sotillo": {
+                        "oficinas": ["Notaría Pública Primera de Puerto La Cruz"]
+                      },
+                      "Anaco": {
+                        "oficinas": ["Notaría Pública Segunda de Puerto La Cruz",
+                          "Notaría Pública Tercera de Puerto La Cruz",
+                          "Notaría Pública de Anaco"
+                        ]
+                      },
+                      "Simón Rodrógiez": {
+                        "oficinas": ["Notaría Pública El Tigre",
+                        "Notaría Pública Segunda del Tigre"]
+                      },
+                      "Urbaneja": {
+                        "oficinas": ["Notaría Pública de Lecherias"]
+                      },
+                      "Francisco de Miranda": {
+                        "oficinas":["Notaría Pública de Pariaguan"] 
+                      }
+
+                    }
                 }
             }
         }
-    }  
+    
+}
 }

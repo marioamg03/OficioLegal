@@ -59,9 +59,20 @@
    </section>
 <!-- Seccion Que Ofrecemos Documentos Asesorias FINAL-->
 
-<!-- Seccion Mapas INICIO-->
-   <section>
-     <Saren></Saren>
+<!-- Seccion Mapas INICIO -->
+   <section style="margin-bottom: 50px" >
+     <v-layout column wrap class="my-5" align-center>
+      <div class="text-xs-center titulo">
+        <div id= "grad1" class ="grad"></div>
+          <h2 class="subtitle is-2 text">Oficinas Saren</h2>
+        <div id= "grad2" class ="grad"></div>
+      </div>
+    </v-layout>
+
+   <v-container grid-list-xl >
+      <Saren></Saren>
+    </v-container>
+     
    </section>
 <!-- Seccion Mapas FINAL-->
 
@@ -87,6 +98,7 @@
   import sliders from './components/Slider'
   import offers from './components/Whatweoffer'
   import Menu from './components/Menu'
+  import step from './components/Steps.vue'
 
   export default {
     data: () => ({
@@ -180,7 +192,8 @@
       Saren,
       PFooter,
       guia,
-      Menu
+      Menu,
+      step
     },
     computed: {
       binding () {
@@ -215,5 +228,31 @@
   background: linear-gradient(to right, grey, white);
   margin-left: 10px;
 }
+
+</style>
+
+<style>
+  .grad {
+    height: 5px;
+    width: 400px;
+    background: rgb(44, 44, 44);
+    display: inline-block;
+    position: relative;
+    bottom: 5px;
+  }  
+  
+  #grad1 {
+    background: linear-gradient(to right, white, grey);
+    margin-right: 10px;
+  }
+
+  #grad2 {
+    background: linear-gradient(to right, grey, white);
+    margin-left: 10px;
+  }
+
+  h2{
+    display: inline-block;
+  }
 
 </style>
