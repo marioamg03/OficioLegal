@@ -1,8 +1,8 @@
 {
-  "name": "oficiolegal-pwa",
+  "name": "Oficio Legal",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Sebastian Mujica <sebastianmujica@gmail.com>",
+  "description": "oficiolegal",
+  "author": "Mario Mendoza <mario.amg03@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
